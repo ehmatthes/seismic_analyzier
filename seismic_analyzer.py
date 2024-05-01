@@ -17,22 +17,43 @@ data_file = "AT.SIT..BHZ.M.2015-08-18T000000.000000.csv"
 
 path = data_root / data_dir / data_file
 
-df = pd.read_csv(path, skiprows=18)
+# df = pd.read_csv(path, skiprows=18)
 
 
-# Plot data.
-import plotly.express as px
+# # Plot data.
+# import plotly.express as px
 
-# Only plot every _th point.
-plot_df = df.iloc[::10]
-fig = px.line(plot_df, x="Time", y=" Sample")
+# # Only plot every _th point.
+# plot_df = df.iloc[::10]
+# fig = px.line(plot_df, x="Time", y=" Sample")
 
-fig.update_traces(marker=dict(size=0.1), line=dict(width=0.1))
+# fig.update_traces(marker=dict(size=0.1), line=dict(width=0.1))
 
-fig.show()
+# fig.show()
 
 
 
 
 # import pdb
 # breakpoint()
+
+
+
+import obspy
+
+# Kramer mseed data.
+path = data_root / "fdsnws-dataselect_2024-05-01t22_27_09z-southkramer.mseed"
+
+# Starrigavan mseed data.
+path = data_root / "fdsnws-dataselect_2024-05-01t22_38_36z-starrigavan.mseed"
+
+# Sand Dollar mseed data.
+path = data_root / "fdsnws-dataselect_2024-05-01t22_49_03z-sanddollar.mseed"
+
+# Random dry day, no event (4/30/24).
+path = data_root / "fdsnws-dataselect_2024-05-01t22_52_52z-043024_no_event.mseed"
+
+
+stream = obspy.read(path)
+
+stream.plot()
