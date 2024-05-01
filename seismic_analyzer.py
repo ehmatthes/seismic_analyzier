@@ -10,5 +10,20 @@ path = data_root / data_dir / data_file
 
 df = pd.read_csv(path, skiprows=18)
 
-import pdb
-breakpoint()
+
+# Plot data.
+import plotly.express as px
+
+# Only plot every _th point.
+plot_df = df.iloc[::100]
+fig = px.line(plot_df, x="Time", y=" Sample")
+
+fig.update_traces(marker=dict(size=0.1), line=dict(width=0.1))
+
+fig.show()
+
+
+
+
+# import pdb
+# breakpoint()
