@@ -15,7 +15,7 @@ df = pd.read_csv(path, skiprows=18)
 import plotly.express as px
 
 # Only plot every _th point.
-plot_df = df.iloc[::100]
+plot_df = df.iloc[::10]
 fig = px.line(plot_df, x="Time", y=" Sample")
 
 fig.update_traces(marker=dict(size=0.1), line=dict(width=0.1))
