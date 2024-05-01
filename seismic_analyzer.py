@@ -3,8 +3,17 @@ from pathlib import Path
 import pandas as pd
 
 data_root = Path(__file__).parent / "data"
-data_dir = "fdsnws-dataselect_2024-05-01t05_33_49z"
-data_file = "AT.SIT..BHZ.M.2014-09-18T180000.000000.csv"
+
+# Starrigavan slide, 9/2014
+# data_dir = "fdsnws-dataselect_2024-05-01t05_33_49z"
+# data_file = "AT.SIT..BHZ.M.2014-09-18T180000.000000.csv"
+
+# S Kramer slide, 8/2015
+data_dir = "fdsnws-dataselect_2024-05-01t22_02_42z"
+# data_file = "AT.SIT..BHE.M.2015-08-18T000000.000000.csv"
+# data_file = "AT.SIT..BHN.M.2015-08-18T000000.000000.csv"
+data_file = "AT.SIT..BHZ.M.2015-08-18T000000.000000.csv"
+
 
 path = data_root / data_dir / data_file
 
