@@ -38,3 +38,14 @@ for file in data_files:
 
     plt.close(fig)  # Close the plot to free up memory
 
+    # Make a day plot as well, for 24-hr plots.
+    if "24hr" in file.stem:
+        for index, trace in enumerate(stream):
+            # Only plot middle trace for now.
+            if index != 1:
+                continue
+            output_file = f"kramer_dayplot_{file.stem}-{index}.png"
+            output_path = output_dir / output_file
+
+            print("  Writing dayplot:", output_path)
+            trace.plot(type="dayplot", outfile=output_path, size=(2400, 1200))
