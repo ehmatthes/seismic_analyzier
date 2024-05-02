@@ -19,5 +19,5 @@ for file in data_files:
     stream.plot(outfile=output_path)
 
     # Pause and view a specific plot:
-    # if "08182015" in file.name:
-    #     stream.plot()
+    if "2hr" in file.name:
+        stream.plot()
