@@ -31,4 +31,10 @@ for file in data_files:
     plt.tight_layout()
 
     fig.savefig(output_path)
+
+    # Pause to view a specific plot.
+    # if "1hr" in output_file:
+    #     plt.show()
+
     plt.close(fig)  # Close the plot to free up memory
+
